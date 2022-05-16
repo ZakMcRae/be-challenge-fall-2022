@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Fresh Baked Bread - Large Loaf",
+    "price": 5.99,
+    "deleted": false,
+    "deleteComment": "",
+    "id": "c840f7c3-e985-4ff5-a98c-d8fce60d7987"
+  },
+  {
+    "name": "Blueberry Muffin - 6 pack",
+    "price": 9.99,
+    "deleted": false,
+    "deleteComment": "",
+    "id": "475ddfe8-4ab3-4ab5-8639-83d2f89f85a0"
+  },
+  {
+    "name": "Chocolate Cupcakes - 6 pack",
+    "price": 12.99,
+    "deleted": true,
+    "deleteComment": "",
+    "id": "e10a4b21-e86c-449e-a9e9-a3b444e8b4e4"
+  }
+]
