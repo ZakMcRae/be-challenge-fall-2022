@@ -50,19 +50,22 @@ form {
   max-width: 200px;
 }
 
-form input {
+form input,
+textarea {
   text-align: center;
   margin: 5px 0px;
   padding: 5px;
   border-radius: 3px;
 }
 
-form button {
+button {
   padding: 5px;
   border-radius: 3px;
+  color: #fefefe;
+  background-color: #005cc8;
 }
 
-form button:hover {
+button:hover {
   transform: scale(1.02);
 }
 
