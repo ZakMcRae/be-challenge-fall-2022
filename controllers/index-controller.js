@@ -53,6 +53,7 @@ exports.editItemGet = async function (req, res, next) {
 
 // handle edit item form submission
 exports.editItemPost = async function (req, res, next) {
+  // check value of delete checkbox and set value accordingly
   if (req.body.deleted === "on") {
     req.body.deleted = true;
   } else {
@@ -61,14 +62,20 @@ exports.editItemPost = async function (req, res, next) {
 
   const item = await database.editItem(req.params.id, req.body);
 
-  console.log({ item });
-
   // redirect to item detail page
   return res.redirect(`/item/${item.id}`);
 };
 
-exports.deleteItemGet = function (req, res, next) {
-  res.render("delete-item", { title: "Delete Item" });
+// get delete item form
+exports.deleteItemGet = async function (req, res, next) {
+  const item = await database.getItem(req.params.id);
+
+  res.render("delete-item", { title: "Delete Item", item });
 };
 
-exports.deleteItemPost = function (req, res, next) {};
+// handle delete item form submission
+exports.deleteItemPost = async function (req, res, next) {
+  await database.deleteItem(req.body.id, req.body.deleteComment);
+
+  res.redirect("/items/all");
+};

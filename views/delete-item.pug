@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    div.item-card
+        p= item.name
+        p Price: $#{item.price}
+    
+    form(action=`/item/${item.id}/delete`, method="POST")
+        input(type="hidden", name="id", value=item.id)
+        p Delete Comment:
+        textarea(name="deleteComment" rows=6)
+        button(type="submit") Confirm Delete
