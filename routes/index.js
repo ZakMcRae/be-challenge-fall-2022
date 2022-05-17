@@ -29,6 +29,9 @@ router.get("/item/:id/delete", indexController.deleteItemGet);
 // handle delete item form submission
 router.post("/item/:id/delete", indexController.deleteItemPost);
 
+// handle undelete of item
+router.get("/item/:id/undelete", indexController.unDeleteItem);
+
 // view item detail
 router.get("/item/:id", indexController.viewItem);
 

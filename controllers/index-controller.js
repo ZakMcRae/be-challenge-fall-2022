@@ -79,3 +79,11 @@ exports.deleteItemPost = async function (req, res, next) {
 
   res.redirect("/items/all");
 };
+
+// handle undelete of item
+exports.unDeleteItem = async function (req, res, next) {
+  // edit items deleted value to false in database
+  const item = await database.editItem(req.params.id, { deleted: false });
+
+  res.redirect("/items/all");
+};
