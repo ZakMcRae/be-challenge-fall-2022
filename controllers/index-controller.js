@@ -44,11 +44,28 @@ exports.createItemPost = async function (req, res, next) {
   return res.redirect(`/item/${item.id}`);
 };
 
-exports.editItemGet = function (req, res, next) {
-  res.render("edit-item", { title: "Create New Item" });
+// get edit item form
+exports.editItemGet = async function (req, res, next) {
+  const item = await database.getItem(req.params.id);
+
+  res.render("edit-item", { title: "Edit Item", item });
 };
 
-exports.editItemPost = function (req, res, next) {};
+// handle edit item form submission
+exports.editItemPost = async function (req, res, next) {
+  if (req.body.deleted === "on") {
+    req.body.deleted = true;
+  } else {
+    req.body.deleted = false;
+  }
+
+  const item = await database.editItem(req.params.id, req.body);
+
+  console.log({ item });
+
+  // redirect to item detail page
+  return res.redirect(`/item/${item.id}`);
+};
 
 exports.deleteItemGet = function (req, res, next) {
   res.render("delete-item", { title: "Delete Item" });

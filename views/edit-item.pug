@@ -1,3 +1,11 @@
 extends layout
 
 block content
+    form(action=`/item/${item.id}/edit/`, method="POST")
+        input(type="text", name="name", placeholder="Item Name" value=item.name required)
+        input(type="text", name="price", placeholder="Item Price" value=item.price required)
+        .delete-checkbox 
+            label(for="deleted" class='delete-checkbox-label') Mark as Deleted?
+            input(type="checkbox", name="deleted", checked=item.deleted)
+        input(type="text", name="deleteComment", placeholder="Delete Comment" value=item.deleteComment)
+        button(type="submit") Update Item
