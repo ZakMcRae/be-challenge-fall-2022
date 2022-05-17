@@ -25,11 +25,24 @@ exports.viewItem = async function (req, res, next) {
   res.render("item", { title: "Item Detail", item });
 };
 
+// get create new item form
 exports.createItemGet = function (req, res, next) {
   res.render("create-item", { title: "Create New Item" });
 };
 
-exports.createItemPost = function (req, res, next) {};
+// handle create new item form submission
+exports.createItemPost = async function (req, res, next) {
+  const newItem = {
+    name: req.body.name,
+    price: req.body.price,
+    deleted: false,
+    deleteComment: "",
+  };
+  const item = await database.createItem(newItem);
+
+  // redirect to item detail page
+  return res.redirect(`/item/${item.id}`);
+};
 
 exports.editItemGet = function (req, res, next) {
   res.render("edit-item", { title: "Create New Item" });

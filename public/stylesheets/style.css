@@ -42,3 +42,26 @@ nav a {
 .item-card * {
   padding: 5px;
 }
+
+form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
+
+form input {
+  text-align: center;
+  margin: 5px 0px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+form button {
+  padding: 5px;
+  border-radius: 3px;
+}
+
+form button:hover {
+  transform: scale(1.02);
+}

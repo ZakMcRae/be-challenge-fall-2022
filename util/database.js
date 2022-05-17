@@ -98,5 +98,5 @@ exports.createItem = async (item) => {
 
   await fs.writeFile("db.json", JSON.stringify(items));
 
-  return;
+  return item;
 };
