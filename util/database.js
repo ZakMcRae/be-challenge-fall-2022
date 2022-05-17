@@ -22,7 +22,7 @@ exports.resetDatabase = async () => {
       name: "Chocolate Cupcakes - 6 pack",
       price: 12.99,
       deleted: true,
-      deleteComment: "",
+      deleteComment: "Ran out of cocoa powder",
       id: "e10a4b21-e86c-449e-a9e9-a3b444e8b4e4",
     },
   ];
@@ -99,4 +99,31 @@ exports.createItem = async (item) => {
   await fs.writeFile("db.json", JSON.stringify(items));
 
   return item;
+};
+
+// edit specific item in database
+exports.editItem = async (id, item) => {
+  const dbData = await fs.readFile("db.json", "utf8");
+  const items = JSON.parse(dbData);
+
+  // get item from database with matching id
+  const dbItem = items.find((item) => item.id === id);
+
+  // update item with new values
+  const updatedItem = {
+    ...dbItem,
+    ...item,
+  };
+
+  // replace old item with new item
+  const newItems = items.map((item) => {
+    if (item.id === id) {
+      return updatedItem;
+    }
+    return item;
+  });
+
+  await fs.writeFile("db.json", JSON.stringify(newItems));
+
+  return updatedItem;
 };

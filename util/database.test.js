@@ -103,3 +103,21 @@ test("createItem - create a new database item", async () => {
   const items = await database.getAll();
   expect(items.length).toBe(4);
 });
+
+test("editItem - edit a single database item", async () => {
+  // make update object and update it
+  const newItem = {
+    name: "Fresh Baked Bread - Medium Loaf",
+    price: 7.99,
+    deleted: true,
+    deleteComment: "Running low on flour",
+  };
+  await database.editItem("c840f7c3-e985-4ff5-a98c-d8fce60d7987", newItem);
+
+  // check that item has been edited
+  const item = await database.getItem("c840f7c3-e985-4ff5-a98c-d8fce60d7987");
+
+  expect(item.name).toEqual("Fresh Baked Bread - Medium Loaf");
+  expect(item.deleted).toEqual(true);
+  expect(item.deleteComment).toEqual("Running low on flour");
+});
