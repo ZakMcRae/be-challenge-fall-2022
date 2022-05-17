@@ -1,7 +1,8 @@
 extends layout
 
 block content
-    ul(class='items-list')
+    if items.length > 0
+        ul(class='items-list')
         for item in items
             li(class='item-card')
                 p= item.name
@@ -10,3 +11,5 @@ block content
                 .item-card-links
                     a(href=`/item/${item.id}`) View
                     a(href=`/item/${item.id}/undelete`) Undelete
+    else 
+        p No items found

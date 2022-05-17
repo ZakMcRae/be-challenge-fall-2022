@@ -1,12 +1,15 @@
 extends layout
 
 block content
-    ul(class='items-list')
-        for item in items
-            li(class='item-card')
-                p= item.name
-                p $#{item.price}
-                .item-card-links
-                    a(href=`/item/${item.id}`) View
-                    a(href=`/item/${item.id}/edit`) Edit
-                    a(href=`/item/${item.id}/delete`) Delete
+    if items.length > 0
+        ul(class='items-list')
+            for item in items
+                li(class='item-card')
+                    p= item.name
+                    p $#{item.price}
+                    .item-card-links
+                        a(href=`/item/${item.id}`) View
+                        a(href=`/item/${item.id}/edit`) Edit
+                        a(href=`/item/${item.id}/delete`) Delete
+    else 
+        p No items found
