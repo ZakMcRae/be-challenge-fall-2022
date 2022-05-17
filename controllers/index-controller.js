@@ -18,8 +18,11 @@ exports.viewDeletedItems = async function (req, res, next) {
   res.render("deleted-items", { title: "View Deleted Items", items });
 };
 
-exports.viewItem = function (req, res, next) {
-  res.render("item", { title: item.name });
+// get specific item and display it
+exports.viewItem = async function (req, res, next) {
+  const item = await database.getItem(req.params.id);
+
+  res.render("item", { title: "Item Detail", item });
 };
 
 exports.createItemGet = function (req, res, next) {
@@ -39,5 +42,3 @@ exports.deleteItemGet = function (req, res, next) {
 };
 
 exports.deleteItemPost = function (req, res, next) {};
-
-exports.undeleteItem = function (req, res, next) {};

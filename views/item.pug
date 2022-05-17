@@ -1,3 +1,15 @@
 extends layout
 
 block content
+    div.item-card
+        p= item.name
+        p Price: $#{item.price}
+        p Status: #{item.deleted === false ? 'Active' : 'Deleted'}
+
+        // if item is marked deleted then show delete comment and only show edit, otherwise show edit and delete
+        if item.deleted === true
+            p Delete Comment: #{item.deleteComment}
+            a(href=`/item/${item.id}/edit`) Edit
+        else
+            a(href=`/item/${item.id}/edit`) Edit
+            a(href=`/item/${item.id}/delete`) Delete
