@@ -17,10 +17,14 @@ li {
 
 nav {
   display: flex;
+  background-color: #005cc8;
 }
 
 nav a {
-  padding: 0px 5px;
+  padding: 5px 10px;
+  color: #fefefe;
+  display: flex;
+  align-self: center;
 }
 
 .page-title {
@@ -41,6 +45,15 @@ nav a {
 
 .item-card * {
   padding: 5px;
+}
+
+.item-card a {
+  display: inline-block;
+  background-color: #005cc8;
+  color: #fefefe;
+  border-radius: 3px;
+  margin: 5px;
+  width: 65px;
 }
 
 form {
@@ -77,7 +90,20 @@ button:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   max-width: 300px;
   margin: 25px auto;
-  /* border: 1px solid #dedede; */
   border-radius: 5px;
   padding: 50px;
+}
+
+.homepage p {
+  padding: 10px;
+}
+
+.homepage a {
+  display: block;
+  margin-top: 10px;
+  font-size: 24px;
+  padding: 5px;
+  border-radius: 3px;
+  color: #fefefe;
+  background-color: #005cc8;
 }
