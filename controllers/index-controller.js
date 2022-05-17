@@ -8,7 +8,7 @@ exports.viewHomepage = function (req, res, next) {
 exports.viewAllItems = async function (req, res, next) {
   const items = await database.getActiveItems();
 
-  res.render("all-items", { title: "View All Items", items });
+  res.render("all-items", { title: "View Inventory Items", items });
 };
 
 // get all deleted items and display them
