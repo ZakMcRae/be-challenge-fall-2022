@@ -11,9 +11,6 @@ router.get("/items/all", indexController.viewAllItems);
 // view deleted items page
 router.get("/items/deleted", indexController.viewDeletedItems);
 
-// view item detail
-router.get("/item/:id", indexController.viewItem);
-
 // view create new item form
 router.get("/item/create", indexController.createItemGet);
 
@@ -31,5 +28,8 @@ router.get("/item/:id/delete", indexController.deleteItemGet);
 
 // handle delete item form submission
 router.get("/item/:id/delete", indexController.deleteItemPost);
+
+// view item detail
+router.get("/item/:id", indexController.viewItem);
 
 module.exports = router;
