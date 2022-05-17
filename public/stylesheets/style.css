@@ -1,3 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
 nav {
   display: flex;
 }
@@ -6,6 +23,22 @@ nav a {
   padding: 0px 5px;
 }
 
+.page-title {
+  margin: 50px 0;
+}
+
 .home-link {
   flex-grow: 1;
+  text-align: start;
+}
+
+.item-card {
+  margin: 25px auto;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  max-width: 285px;
+}
+
+.item-card * {
+  padding: 5px;
 }

@@ -4,12 +4,14 @@ exports.viewHomepage = function (req, res, next) {
   res.render("index", { title: "Welcome to Jess's Baked Goods" });
 };
 
+// get all active items (non deleted) and display them
 exports.viewAllItems = async function (req, res, next) {
   const items = await database.getActiveItems();
 
   res.render("all-items", { title: "View All Items", items });
 };
 
+// get all deleted items and display them
 exports.viewDeletedItems = async function (req, res, next) {
   const items = await database.getDeletedItems();
 
@@ -37,3 +39,5 @@ exports.deleteItemGet = function (req, res, next) {
 };
 
 exports.deleteItemPost = function (req, res, next) {};
+
+exports.undeleteItem = function (req, res, next) {};
