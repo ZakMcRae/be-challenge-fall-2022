@@ -1,8 +1,22 @@
 # be-challenge-fall-2022
 Shopify Back End Developer Intern Challenge - Fall 2022
 
-## Try my App
-[Click here to open app](https://replit.com/@ZakMc/be-challenge-fall-2022?v=1)
+## Try My App
+[Click here to open app](https://be-challenge-fall-2022.zakmc.repl.co/)  
+[Click here to open the Replit page](https://replit.com/@ZakMc/be-challenge-fall-2022)
+
+
+
+How to use the app:
+ - to create an item, click the "Create Item" link in the nav bar and fill in the form
+ - to view inventory items click on the "View Inventory Items" in the nav bar, a list of all active items will be displayed
+ - to view all deleted items click on the "View Deleted Items" in the nav bar, a list of all deleted items will be displayed
+ - to view a specific item, you can click the "View" button when on a view items page
+ - to edit an item, you can click the "Edit" button when on the "View Inventory Items" page or a specific item page
+ - to delete an item you can click the "Delete" button when on the "View Inventory Items" page or a specific item page, you can add an optional delete comment when using the delete item form
+- to undelete an item you can click the "Undelete" button when on the "View Deleted Items" page or a specific deleted item page
+ - you can also delete/undelete an item in the edit item form (see above to edit item) by ticking the "Mark as Deleted" checkbox appropriately
+
 
 ## The Challenge
 Build an inventory tracking web application for a logistics company. We are looking for a web application that meets the requirements listed below, along with one additional feature, with the options also listed below. 
